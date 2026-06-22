@@ -17,7 +17,7 @@ jobs:
         distribution: 'zulu'
         cache: maven
     - name: Run Sonar Analysis with cloud
-      run:  mvn -B verify sonar:sonar -Dsonar.projectKey=testtraininggs_testtraininggs -Dsonar.organization=testtraininggs -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$SONAR_TOKEN
+      run:  mvn -B verify sonar:sonar -Dsonar.projectKey=samplee12_samplee12 -Dsonar.organization=samplee12 -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$SONAR_TOKEN
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -44,6 +44,6 @@ jobs:
       - name: ZAP Scan
         uses: zaproxy/action-baseline@v0.14.0
         with:
-          target: 'http://testphp.vulnweb.com/'
+          target: 'https://juice-shop.github.io/'
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'
